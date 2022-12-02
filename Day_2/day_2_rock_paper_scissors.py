@@ -93,7 +93,7 @@ outcomes = {
 with open('input.txt') as f:
     lines = f.readlines()
 lines = list(map(lambda x: tuple(x.replace('\n',"").replace('X',"Loss").replace("Y","Draw").replace("Z","Win").split(' ')), lines))
-
+ 
 score = 0
 for i in lines:
     score += outcomes[i]

@@ -97,5 +97,5 @@ lines = list(map(lambda x: tuple(x.replace('\n',"").replace('X',"Loss").replace(
 score = 0
 for i in lines:
     score += outcomes[i]
-
+ 
 score

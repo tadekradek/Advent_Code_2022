@@ -1,0 +1,49 @@
+# Link to page
+# https://adventofcode.com/2022/day/4
+
+# Part 1
+
+
+with open('input.txt') as f:
+    lines = f.readlines()
+
+def text_process(x):
+    x = x.rstrip('\n').split(',')
+    elf1 = x[0].split('-')
+    elf2 = x[1].split('-')
+    elf1 = (int(elf1[0]),int(elf1[1]))
+    elf2 = (int(elf2[0]),int(elf2[1]))
+    return [elf1,elf2]
+
+lines = list(map(text_process, lines))
+
+
+score = 0
+for i in lines:
+    if (i[0][0]<=i[1][0] and i[0][1]>=i[1][1]) or (i[1][0]<=i[0][0] and i[1][1]>=i[0][1]):
+        score += 1
+
+score
+
+# Part 2
+with open('input.txt') as f:
+    lines = f.readlines()
+
+def text_process(x):
+    x = x.rstrip('\n').split(',')
+    elf1 = x[0].split('-')
+    elf2 = x[1].split('-')
+    elf1 = (int(elf1[0]),int(elf1[1]))
+    elf2 = (int(elf2[0]),int(elf2[1]))
+    return [elf1,elf2]
+
+lines = list(map(text_process, lines))
+
+score = 0
+for i in lines:
+    if ((i[0][0] in range(i[1][0],i[1][1]+1)) or (i[0][1] in range(i[1][0],i[1][1]+1))) or ((i[1][0] in range(i[0][0],i[0][1]+1)) or (i[1][1] in range(i[0][0],i[0][1]+1))  ):
+        score += 1
+
+score
+
+
